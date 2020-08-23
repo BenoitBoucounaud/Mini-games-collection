@@ -51,7 +51,7 @@ def gui():
     computer_score = IntVar()
 
     rps_frame = Frame(rps_windows)
-    rps_frame.grid(column = 0, row = 0, sticky = "nsew")
+    rps_frame.grid(column = 0, row = 0, sticky = 'nsew')
     
     rps_frame.columnconfigure(0, weight = 1)
     rps_frame.rowconfigure(0, weight = 1)

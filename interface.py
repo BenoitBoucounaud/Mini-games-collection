@@ -20,8 +20,8 @@ rps_button.pack()
 hm_button = Button(mainframe, text = """Hangman""", command = hangmanGame.gui)
 hm_button.pack()
 
-#pd_button = Button(mainframe, text = """Poker dice""", command = dice_poker.gui)
-#pd_button.pack()
+pd_button = Button(mainframe, text = """Poker dice""", command = dice_poker.gui)
+pd_button.pack()
 
 exit_button = Button(mainframe, text = """Quit""", command = root.destroy)
 exit_button.pack(side = BOTTOM)
