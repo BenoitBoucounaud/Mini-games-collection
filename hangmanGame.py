@@ -157,6 +157,7 @@ def gui():
     hm_entry.grid(column=2, row=5)
     hm_entry_button = Button(hm_frame, text="Guess", command=game)
     hm_entry_button.grid(column=2, row=6)
+    hm_windows.bind('<Return>', game)
 
     Label(hm_frame, text="Player score ").grid(column=1, row=7, sticky="w")
     Label(hm_frame, textvariable=player_score).grid(
