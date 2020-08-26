@@ -3,6 +3,7 @@ from tkinter import *
 import rockPaperScissors
 import hangmanGame
 import dice_poker
+import test
 
 root = Tk()
 root.title("Mini games collection")

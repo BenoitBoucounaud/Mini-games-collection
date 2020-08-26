@@ -98,8 +98,7 @@ def gui():
 
     pd_frame = Frame(pd_windows, width=300)
     pd_frame.grid(column=0, row=0, sticky='nsew')
-    pd_frame.columnconfigure(0, weight=1)
-    pd_frame.rowconfigure(0, weight=1)
+
     Label(pd_frame, text="Dice").grid(column=3, row=1)
     Label(pd_frame, textvariable=dice_output).grid(column=3, row=2)
     Label(pd_frame, textvariable=hand_output).grid(column=3, row=3)
@@ -125,6 +124,14 @@ def gui():
     pd_reroll_button.grid(column=3, row=6)
     pd_reset_button = Button(pd_frame, text='Reset', command=reset_game)
     pd_reset_button.grid(column=3, row=7)
+    
+    pd_windows.columnconfigure(0, weight=1)
+    pd_windows.rowconfigure(0, weight=1)
+
+    for i in range(1,6):    
+        pd_frame.columnconfigure(i, weight=1)
+    for i in range(1, 8):
+        pd_frame.rowconfigure(i, weight=1)
 
 
 def roll(roll_number):

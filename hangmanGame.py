@@ -146,8 +146,6 @@ def gui():
 
     hm_frame = Frame(hm_windows, width=300)
     hm_frame.grid(column=0, row=0, sticky="nsew")
-    hm_frame.columnconfigure(0, weight=1)
-    hm_frame.rowconfigure(0, weight=1)
 
     Label(hm_frame, textvariable=hm_graphic, anchor=W,
           justify=LEFT).grid(column=2, row=1)
@@ -163,12 +161,20 @@ def gui():
     Label(hm_frame, text="Player score ").grid(column=1, row=7, sticky="w")
     Label(hm_frame, textvariable=player_score).grid(
         column=1, row=8, sticky="w")
-    Label(hm_frame, text="Computer score ").grid(column=3, row=7, sticky="w")
+    Label(hm_frame, text="Computer score ").grid(column=3, row=7, sticky="e")
     Label(hm_frame, textvariable=computer_score).grid(
-        column=3, row=8, sticky="w")
+        column=3, row=8, sticky="e")
     Label(hm_frame, textvariable=result_set).grid(column=2, row=9)
     replay_button = Button(hm_frame, text="Play again", command=reset_game)
     replay_button.grid(column=2, row=10)
+    
+    hm_windows.columnconfigure(0, weight=1)
+    hm_windows.rowconfigure(0, weight=1)
+
+    for i in range(1,4):    
+        hm_frame.columnconfigure(i, weight=1)
+    for i in range(1, 11):
+        hm_frame.rowconfigure(i, weight=1)
 
 
 if __name__ == '__main__':

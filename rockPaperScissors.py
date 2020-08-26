@@ -54,16 +54,13 @@ def gui():
     rps_frame = Frame(rps_windows)
     rps_frame.grid(column=0, row=0, sticky='nsew')
 
-    rps_frame.columnconfigure(0, weight=1)
-    rps_frame.rowconfigure(0, weight=1)
-
-    Label(rps_frame, text="Player").grid(column=1, row=1, sticky="nsew")
+    Label(rps_frame, text="Player").grid(column=1, row=1, sticky="w")
     Radiobutton(rps_frame, text="Rock", variable=player_choice,
-                value=1).grid(column=1, row=2, sticky="nsew")
+                value=1).grid(column=1, row=2, sticky="w")
     Radiobutton(rps_frame, text="Paper", variable=player_choice,
-                value=2).grid(column=1, row=3, sticky="nsew")
+                value=2).grid(column=1, row=3, sticky="w")
     Radiobutton(rps_frame, text="Scissors", variable=player_choice,
-                value=3).grid(column=1, row=4, sticky="nsew")
+                value=3).grid(column=1, row=4, sticky="w")
 
     Label(rps_frame, text="Computer").grid(column=3, row=1, sticky="nsew")
     Label(rps_frame, textvariable=computer_choice).grid(
@@ -81,6 +78,14 @@ def gui():
         column=2, row=2, stick="nsew")
     Label(rps_frame, textvariable=result_set, width=50).grid(
         column=2, row=7, sticky="nsew")
+
+    rps_windows.columnconfigure(0, weight=1)
+    rps_windows.rowconfigure(0, weight=1)
+
+    for i in range(1,4):    
+        rps_frame.columnconfigure(i, weight=1)
+    for i in range(1, 8):
+        rps_frame.rowconfigure(i, weight=1)
 
 
 if __name__ == '__main__':
